@@ -12,12 +12,22 @@ To write a **NumPy** program that sorts the elements in each column of a given 2
 5. **Display Output**: Print the original array and the column-wise sorted array.
 
 ## 🧾 Program
-Add code here
+```
+import numpy as np
 
+array = np.array([[7, 67, 87],
+                [43, 54, 98],
+                [78, 8, 9]])
+
+sorted_array = np.sort(array, axis=0)
+
+print("Original array:\n", array)
+print("Column-wise sorted array:\n", sorted_array)
+```
 ## Output
-
+![alt text](<Screenshot 2026-01-01 105731.png>)
 ## Result
-
+This program was executed successfully
 # # NumPy Program: Find Indices Where Elements in Array x are Greater Than or Equal to Corresponding Elements in Array y
 
 ## 🎯 Aim
@@ -33,12 +43,19 @@ To write a Python program using **NumPy** that finds the indices where elements 
 5. **Print Indices**: Print the indices where the condition holds true.
 
 ## 🧾 Program
+```
+import numpy as np
 
-Add code here
+x = np.array([1, 30, 54, 70, 22])
+y = np.array([2, 7, 80, 11, 45])
 
+indices = np.where(x >= y)
+print("Indices where x >= y:", indices[0])
+```
 ## Output
-
+![alt text](<Screenshot 2026-01-01 105748.png>)
 ## Result
+This program was executed successfully
 
 # NumPy Program: Replace the Second Column in a 2D Array
 
@@ -53,12 +70,24 @@ To write a **NumPy** program that deletes the second column from a given 2D arra
 5. **Display Result**: Print the updated array with the replaced column.
 
 ## 🧾 Program
+```
+import numpy as np
 
-Add code here
+a = np.array([[1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]])
 
+new_col = np.array([10, 11, 12])
+
+a = np.delete(a, 1, axis=1)
+a = np.insert(a, 1, new_col, axis=1)
+
+print("Updated array:\n", a)
+```
 ## Output
-
+![alt text](<Screenshot 2026-01-01 105802.png>)
 ## Result
+This program was executed successfully
 
 # Pandas Program: Create and Display a DataFrame with Custom Index Labels
 
@@ -79,11 +108,26 @@ To create and display a **DataFrame** using the **Pandas** library in Python fro
 ---
 
 ## 💻 Program
-Add code here
+```
+import pandas as pd
+import numpy as np
 
+exam_data = {
+    'name': ['Anthony', 'Diana', 'Kate', 'Jake', 'Emma', 'Matthew', 'Diya', 'Tara', 'Riya'],
+    'score': [23.6,45.1,34,23.2,43,54.6,23,23.5,12.0],
+    'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2],
+    'qualify': ['yes', 'no', 'yes', 'no', 'no', 'yes', 'yes', 'yes', 'no']
+}
+
+labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+
+df = pd.DataFrame(exam_data, index=labels)
+print(df)
+```
 ## Output
-
+![alt text](<Screenshot 2026-01-01 105830.png>)
 ## Result
+This program was executed successfully
 
 # 🧪 Pandas Program: Join Two DataFrames Along Rows
 
@@ -104,9 +148,28 @@ To write a Python program using Pandas to **join two DataFrames along rows** (ro
 ---
 
 ## 💻 Program
+```
+import pandas as pd
 
-Add code here
+student_data1 = {
+    'StudentID': [1, 2, 3],
+    'Name': ['Maya', 'Clara', 'Rita'],
+    'Grade': ['A', 'B', 'C']
+}
 
+student_data2 = {
+    'StudentID': [4, 5, 6],
+    'Name': ['Harry', 'Emma', 'Ron'],
+    'Grade': ['B', 'A', 'C']
+}
+
+df1 = pd.DataFrame(student_data1)
+df2 = pd.DataFrame(student_data2)
+
+combined_df = pd.concat([df1, df2], axis=0)
+print(combined_df)
+```
 ## Output
-
+![alt text](<Screenshot 2026-01-01 105848.png>)
 ## Result
+This program was executed successfully
